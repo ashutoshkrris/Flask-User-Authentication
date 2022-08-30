@@ -1,0 +1,54 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <main class="form-signin w-100 m-auto">
+      <form role="form" method="post" action="">
+        {{ form.csrf_token }}
+        <h1 class="h3 mb-3 fw-normal text-center">Please register</h1>
+
+        <div class="form-floating">
+          {{ form.email(placeholder="email", class="form-control mb-2") }}
+          {{ form.email.label }}
+          <p class="error">
+            {% if form.email.errors %}
+              {% for error in form.email.errors %}
+                {{ error }}
+              {% endfor %}
+            {% endif %}
+          </p>
+        </div>
+        <div class="form-floating">
+          {{ form.password(placeholder="password", class="form-control mb-2") }}
+          {{ form.password.label }}
+          <p class="error">
+            {% if form.password.errors %}
+              {% for error in form.password.errors %}
+                {{ error }}
+              {% endfor %}
+            {% endif %}
+          </p>
+        </div>
+        <div class="form-floating">
+          {{ form.confirm(placeholder="Confirm Password", class="form-control mb-2") }}
+          {{ form.confirm.label }}
+          <p class="error">
+            {% if form.confirm.errors %}
+              {% for error in form.confirm.errors %}
+                {{ error }}
+              {% endfor %}
+            {% endif %}
+          </p>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+        <p class="text-center mt-3">Already registered? <a href="{{ url_for('accounts.login') }}">Login now</a></p>
+      </form>
+    </main>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+{% endblock %}
