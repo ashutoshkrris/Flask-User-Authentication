@@ -13,35 +13,35 @@
         <div class="form-floating">
           {{ form.email(placeholder="email", class="form-control mb-2") }}
           {{ form.email.label }}
-          <p class="error">
             {% if form.email.errors %}
               {% for error in form.email.errors %}
-                {{ error }}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
               {% endfor %}
             {% endif %}
-          </p>
         </div>
         <div class="form-floating">
           {{ form.password(placeholder="password", class="form-control mb-2") }}
           {{ form.password.label }}
-          <p class="error">
             {% if form.password.errors %}
               {% for error in form.password.errors %}
-                {{ error }}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
               {% endfor %}
             {% endif %}
-          </p>
         </div>
         <div class="form-floating">
           {{ form.confirm(placeholder="Confirm Password", class="form-control mb-2") }}
           {{ form.confirm.label }}
-          <p class="error">
             {% if form.confirm.errors %}
               {% for error in form.confirm.errors %}
-                {{ error }}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
               {% endfor %}
             {% endif %}
-          </p>
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
         <p class="text-center mt-3">Already registered? <a href="{{ url_for('accounts.login') }}">Login now</a></p>
