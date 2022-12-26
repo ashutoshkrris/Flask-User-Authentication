@@ -1,10 +1,9 @@
-# project/util.py
-
-
 from flask_testing import TestCase
 
 from src import app, db
 from src.accounts.models import User
+
+import os
 
 
 class BaseTestCase(TestCase):
@@ -22,3 +21,5 @@ class BaseTestCase(TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+        testdb_path = os.path.join('src', 'testdb.sqlite')
+        os.remove(testdb_path)
