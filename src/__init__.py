@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
-from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -13,7 +12,6 @@ app.config.from_object(config("APP_SETTINGS"))
 login_manager = LoginManager()
 login_manager.init_app(app)
 bcrypt = Bcrypt(app)
-mail = Mail(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
