@@ -33,6 +33,7 @@ def create_admin():
         user = User(email=email, password=password, is_admin=True)
         db.session.add(user)
         db.session.commit()
+        print(f"Admin with email {email} created successfully!")
     except Exception:
         print("Couldn't create admin user.")
 

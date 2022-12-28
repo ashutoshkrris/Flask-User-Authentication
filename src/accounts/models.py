@@ -22,4 +22,4 @@ class User(UserMixin, db.Model):
         self.is_admin = is_admin
 
     def __repr__(self):
-        return f"<email {self.email}"
+        return f"<email {self.email}>"
