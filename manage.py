@@ -10,17 +10,18 @@ import getpass
 cli = FlaskGroup(app)
 
 
-@cli.command('test')
+@cli.command("test")
 def test():
     """Runs the unit tests without coverage."""
-    tests = unittest.TestLoader().discover('tests')
+    tests = unittest.TestLoader().discover("tests")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         return 0
     else:
         return 1
 
-@cli.command('create_admin')
+
+@cli.command("create_admin")
 def create_admin():
     """Creates the admin user."""
     email = input("Enter email address: ")
@@ -35,6 +36,7 @@ def create_admin():
         db.session.commit()
     except Exception:
         print("Couldn't create admin user.")
+
 
 if __name__ == "__main__":
     cli()

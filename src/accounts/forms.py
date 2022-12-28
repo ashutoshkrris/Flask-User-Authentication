@@ -6,24 +6,23 @@ from src.accounts.models import User
 
 
 class LoginForm(FlaskForm):
-    email = EmailField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    email = EmailField("Email", validators=[DataRequired(), Email()])
+    password = PasswordField("Password", validators=[DataRequired()])
 
 
 class RegisterForm(FlaskForm):
     email = EmailField(
-        'Email',
-        validators=[DataRequired(), Email(message=None), Length(min=6, max=40)])
+        "Email", validators=[DataRequired(), Email(message=None), Length(min=6, max=40)]
+    )
     password = PasswordField(
-        'Password',
-        validators=[DataRequired(), Length(min=6, max=25)]
+        "Password", validators=[DataRequired(), Length(min=6, max=25)]
     )
     confirm = PasswordField(
-        'Repeat password',
+        "Repeat password",
         validators=[
             DataRequired(),
-            EqualTo('password', message='Passwords must match.')
-        ]
+            EqualTo("password", message="Passwords must match."),
+        ],
     )
 
     def validate(self):
