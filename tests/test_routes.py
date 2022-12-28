@@ -1,8 +1,7 @@
 import unittest
 
-from flask_login import current_user
-
 from base_test import BaseTestCase
+from flask_login import current_user
 
 
 class TestPublic(BaseTestCase):

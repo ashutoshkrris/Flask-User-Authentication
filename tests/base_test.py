@@ -1,9 +1,9 @@
+import os
+
 from flask_testing import TestCase
 
 from src import app, db
 from src.accounts.models import User
-
-import os
 
 
 class BaseTestCase(TestCase):

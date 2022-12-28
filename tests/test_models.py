@@ -1,10 +1,10 @@
 import datetime
 import unittest
 
+from base_test import BaseTestCase
 from flask_login import current_user
 
 from src import bcrypt
-from base_test import BaseTestCase
 from src.accounts.models import User
 
 

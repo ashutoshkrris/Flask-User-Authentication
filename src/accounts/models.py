@@ -2,7 +2,7 @@ from datetime import datetime
 
 from flask_login import UserMixin
 
-from src import db, bcrypt
+from src import bcrypt, db
 
 
 class User(UserMixin, db.Model):

@@ -1,11 +1,10 @@
-from flask import render_template, url_for, redirect, flash, request, Blueprint
-from flask_login import login_user, logout_user, login_required
+from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask_login import login_required, login_user, logout_user
 
-
+from src import bcrypt, db
 from src.accounts.models import User
-from src import db, bcrypt
-from .forms import LoginForm, RegisterForm
 
+from .forms import LoginForm, RegisterForm
 
 accounts_bp = Blueprint("accounts", __name__)
 

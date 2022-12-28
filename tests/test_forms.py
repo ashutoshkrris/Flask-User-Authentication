@@ -1,7 +1,8 @@
 import unittest
 
 from base_test import BaseTestCase
-from src.accounts.forms import RegisterForm, LoginForm
+
+from src.accounts.forms import LoginForm, RegisterForm
 
 
 class TestRegisterForm(BaseTestCase):
