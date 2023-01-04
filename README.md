@@ -1,3 +1,3 @@
 # Flask Basic User Registration
 
-Tutorial coming soon..
+freeCodeCamp Turorial: https://www.freecodecamp.org/news/how-to-setup-user-authentication-in-flask/
