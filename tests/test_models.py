@@ -12,6 +12,7 @@ class TestUser(BaseTestCase):
     def test_user_registration(self):
         # Ensure user registration behaves correctly.
         with self.client:
+            self.client.get("/logout", follow_redirects=True)
             self.client.post(
                 "/register",
                 data=dict(
@@ -27,6 +28,7 @@ class TestUser(BaseTestCase):
     def test_get_by_id(self):
         # Ensure id is correct for the current/logged in user
         with self.client:
+            self.client.get("/logout", follow_redirects=True)
             self.client.post(
                 "/login",
                 data=dict(email="ad@min.com", password="admin_user"),
@@ -37,6 +39,7 @@ class TestUser(BaseTestCase):
     def test_created_on_defaults_to_datetime(self):
         # Ensure that registered_on is a datetime
         with self.client:
+            self.client.get("/logout", follow_redirects=True)
             self.client.post(
                 "/login",
                 data=dict(email="ad@min.com", password="admin_user"),
@@ -54,6 +57,7 @@ class TestUser(BaseTestCase):
     def test_validate_invalid_password(self):
         # Ensure user can't login when the pasword is incorrect
         with self.client:
+            self.client.get("/logout", follow_redirects=True)
             response = self.client.post(
                 "/login",
                 data=dict(email="ad@min.com", password="foo_bar"),
